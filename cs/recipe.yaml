@@ -1,0 +1,31 @@
+abstract: 
+    api_version: 5
+    # extends:
+
+#opts:
+#    minify: false
+
+
+# modules section is for registering application modules
+# you can read more detailed about modules format here - https://github.com/EugeneN/cafe/wiki/recipe-file
+modules:
+    - jquery: npm://commonjs-jquery
+    - libprotein: npm://libprotein
+    - console-logger: npm://console-logger
+    - libmonad: npm://libmonad
+    - libprotocol: npm://libprotocol
+    - dna: npm://dna-lang
+    - idom: jquery-dom-parser
+
+
+# Section for defining your bundles structure
+bundles:
+    bundle1:
+        modules:
+            - jquery
+            - libprotein
+            - console-logger
+            - libmonad
+            - libprotocol
+            - idom
+            - dna

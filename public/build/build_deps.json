@@ -1,0 +1,63 @@
+[
+    {
+        "name": "bundle1",
+        "modules": [
+            {
+                "name": "dna",
+                "path": "npm://dna-lang",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [],
+                "prefix_meta": {}
+            },
+            {
+                "name": "idom",
+                "path": "jquery-dom-parser",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [],
+                "prefix_meta": {}
+            },
+            {
+                "name": "libprotocol",
+                "path": "npm://libprotocol",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [],
+                "prefix_meta": {}
+            },
+            {
+                "name": "libmonad",
+                "path": "npm://libmonad",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [],
+                "prefix_meta": {}
+            },
+            {
+                "name": "console-logger",
+                "path": "npm://console-logger",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [],
+                "prefix_meta": {}
+            },
+            {
+                "name": "libprotein",
+                "path": "npm://libprotein",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [],
+                "prefix_meta": {}
+            },
+            {
+                "name": "jquery",
+                "path": "npm://commonjs-jquery",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [],
+                "prefix_meta": {}
+            }
+        ]
+    }
+]

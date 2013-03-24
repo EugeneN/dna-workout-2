@@ -1,0 +1,51 @@
+<html>
+
+<body>
+    <h1>hello</h1>
+    
+    <button data-subscribe=
+    ' click : "hello" | debug
+    '
+    >hello</button>
+
+    <SCRIPT src="public/build/bundle1.js"></SCRIPT>
+    <SCRIPT>
+    (function(root){
+        var bootstrapper = require('bootstrapper');
+
+        bootstrapper.ENV = {
+            LOG: {
+                level: {
+                    INFO: true,
+                    WARN: true,
+                    DEBUG: true,
+                    ERROR: true,
+                    NOTICE: true
+                },
+                ns: {}    
+            },
+
+            DEFAULT_PROTOCOLS: ['IDom']
+        };
+
+        bootstrapper.put_to_queue('init_queue', [
+            function () { console.log("**Starting init queue"); },
+            function () { console.log("**init queue done"); }
+        ]);
+
+        bootstrapper.put_to_queue('document_ready_queue', [
+            function () { console.log("**Starting doc rdy queue"); },
+            function () {
+                var dna = require('dna-lang');
+                dna.start_synthesis(document.body);
+            },
+            function () { console.log("**doc rdy queue done"); }
+        ]);
+
+        bootstrapper.run_init_queue();
+
+    }(window));
+        
+    </SCRIPT>
+</body>
+</html>
