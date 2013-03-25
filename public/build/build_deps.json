@@ -11,8 +11,16 @@
                 "prefix_meta": {}
             },
             {
+                "name": "ihelper-jquery",
+                "path": "npm://dc-helper",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [],
+                "prefix_meta": {}
+            },
+            {
                 "name": "idom",
-                "path": "jquery-dom-parser",
+                "path": "npm://dc-idom",
                 "type": "commonjs",
                 "location": "fs",
                 "deps": [],

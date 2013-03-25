@@ -2,11 +2,13 @@
 
 <body>
     <h1>hello</h1>
-    
+
     <button data-subscribe=
     ' click : "hello" | debug
+            , "hello" | appendContent@greetings-placeholder
     '
     >hello</button>
+    <div id="greetings-placeholder"></div>
 
     <SCRIPT src="public/build/bundle1.js"></SCRIPT>
     <SCRIPT>
@@ -22,10 +24,10 @@
                     ERROR: true,
                     NOTICE: true
                 },
-                ns: {}    
+                ns: {}
             },
 
-            DEFAULT_PROTOCOLS: ['IDom']
+            DEFAULT_PROTOCOLS: ['IDom', 'IHelper']
         };
 
         bootstrapper.put_to_queue('init_queue', [
@@ -45,7 +47,7 @@
         bootstrapper.run_init_queue();
 
     }(window));
-        
+
     </SCRIPT>
 </body>
 </html>
