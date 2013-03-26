@@ -15,8 +15,8 @@ modules:
     - libmonad: npm://libmonad
     - libprotocol: npm://libprotocol
     - dna: npm://dna-lang
-    - idom: npm://dc-idom
-    - ihelper-jquery: npm://dc-helper
+    - idom-jquery: npm://dc-idom
+    - ihelper: npm://dc-helper
 
 
 # Section for defining your bundles structure
@@ -28,6 +28,6 @@ bundles:
             - console-logger
             - libmonad
             - libprotocol
-            - idom
-            - ihelper-jquery
+            - idom-jquery
+            - ihelper
             - dna
