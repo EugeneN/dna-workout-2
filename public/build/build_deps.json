@@ -11,7 +11,7 @@
                 "prefix_meta": {}
             },
             {
-                "name": "ihelper-jquery",
+                "name": "ihelper",
                 "path": "npm://dc-helper",
                 "type": "commonjs",
                 "location": "fs",
@@ -19,7 +19,7 @@
                 "prefix_meta": {}
             },
             {
-                "name": "idom",
+                "name": "idom-jquery",
                 "path": "npm://dc-idom",
                 "type": "commonjs",
                 "location": "fs",
