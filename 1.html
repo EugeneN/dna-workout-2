@@ -4,10 +4,16 @@
     <h1>hello</h1>
 
     <button data-subscribe=
-    ' click : "hello" | debug
-            , "hello" | appendContent@greetings-placeholder
-    '
-    >hello</button>
+        ' click : "hello" | debug
+                , 1|debug| ### ("hello" | appendContent@greetings-placeholder) | 2 | debug
+        '
+        >hello</button>
+
+    <button data-subscribe=
+        ' click : "" | html@greetings-placeholder
+        '
+        >Clear</button>
+
     <div id="greetings-placeholder"></div>
 
     <SCRIPT src="public/build/bundle1.js"></SCRIPT>

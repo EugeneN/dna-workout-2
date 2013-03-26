@@ -1,4 +1,4 @@
-abstract: 
+abstract:
     api_version: 5
     # extends:
 
@@ -9,7 +9,7 @@ abstract:
 # modules section is for registering application modules
 # you can read more detailed about modules format here - https://github.com/EugeneN/cafe/wiki/recipe-file
 modules:
-    - jquery: npm://commonjs-jquery
+    - commonjs-jquery: npm://commonjs-jquery
     - libprotein: npm://libprotein
     - console-logger: npm://console-logger
     - libmonad: npm://libmonad
@@ -23,7 +23,7 @@ modules:
 bundles:
     bundle1:
         modules:
-            - jquery
+            - commonjs-jquery
             - libprotein
             - console-logger
             - libmonad

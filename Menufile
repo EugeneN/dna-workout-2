@@ -23,5 +23,24 @@
         "watch": {
             "src": "cs"
         }
+    },
+    "update": {
+        "build": {
+            "app_root": "cs",
+            "build_root": "public",
+            "formula": "recipe.yaml",
+            "u": true
+        },
+        "global": {}
+    },
+    "updateforce": {
+        "build": {
+            "app_root": "cs",
+            "build_root": "public",
+            "formula": "recipe.yaml",
+            "u": true,
+            "f": true
+        },
+        "global": {}
     }
 }

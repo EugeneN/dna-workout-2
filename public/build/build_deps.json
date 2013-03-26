@@ -59,7 +59,7 @@
                 "prefix_meta": {}
             },
             {
-                "name": "jquery",
+                "name": "commonjs-jquery",
                 "path": "npm://commonjs-jquery",
                 "type": "commonjs",
                 "location": "fs",
