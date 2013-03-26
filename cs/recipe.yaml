@@ -9,20 +9,23 @@ abstract:
 # modules section is for registering application modules
 # you can read more detailed about modules format here - https://github.com/EugeneN/cafe/wiki/recipe-file
 modules:
-    - commonjs-jquery: npm://commonjs-jquery
-    - libprotein: npm://libprotein
-    - console-logger: npm://console-logger
-    - libmonad: npm://libmonad
-    - libprotocol: npm://libprotocol
-    - dna: npm://dna-lang
-    - idom-jquery: npm://dc-idom
-    - ihelper: npm://dc-helper
+    - config: config.coffee
+    - commonjs-jquery: [npm://commonjs-jquery, [config]]
+    - libprotein:      [npm://libprotein, [commonjs-jquery]]
+    - libprotocol:     [npm://libprotocol, [libprotein]]
+    - libmonad:        [npm://libmonad, [libprotein]]
+    - console-logger:  [npm://console-logger, [commonjs-jquery]]
+    - idom-jquery:     [npm://dc-idom, , [commonjs-jquery]]
+    - dna:             [npm://dna-lang, [idom-jquery, libprotein, libprotocol]]
+    - ihelper:         [npm://dc-helper, [libprotocol]]
+    - app:             [app.coffee, [dna]]
 
 
 # Section for defining your bundles structure
 bundles:
     bundle1:
         modules:
+            - config
             - commonjs-jquery
             - libprotein
             - console-logger
@@ -31,3 +34,4 @@ bundles:
             - idom-jquery
             - ihelper
             - dna
+            - app
