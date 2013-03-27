@@ -1,18 +1,48 @@
 <html>
 
 <body>
+    <style type="text/css">
+    .wrappr {
+        border: 1px solid red;
+        padding: 2px;
+        margin: 2px;
+        color: red;
+        display: inline-block;
+    }
+    .cont1 {
+        display: inline-block;
+        border: 1px solid grey;
+    }
+    </style>
+
     <h1>hello &gt;&gt;=</h1>
 
-    <button data-subscribe=
-        ' click : "hello" | debug
-                , 1|debug| ### ("hello" | appendContent@greetings-placeholder) | 2 | debug
-        '
-        >hello</button>
+    <div style="margin: 10px;">
+        <button data-subscribe=
+            ' click : get-html@cont1 | wrap "<span class=wrappr>[%s]</span>" "%s"  | set-html!@cont1
+            '
+            >Rebind</button>
 
-    <button data-subscribe=
-        ' click : "" | html@greetings-placeholder
-        '
-        >Clear</button>
+        <button data-subscribe=
+            ' click : get-html@btn-hello | wrap "<span class=wrappr>[%s]</span>" "%s"  | set-html!@btn-hello
+            '
+            >Relabel</button>
+    </div>
+
+    <div id="cont1" class="cont1">
+        <button
+            id='btn-hello'
+            data-subscribe=
+            ' click : "hello" | debug
+                    , 1 | debug | ### ("hello" | appendContent@greetings-placeholder) | 2 | debug
+            '
+            >hello</button>
+
+        <button data-subscribe=
+            ' click : "" | set-html!@greetings-placeholder
+            '
+            >Clear</button>
+    </div>
 
     <div id="greetings-placeholder"></div>
 
