@@ -1,15 +1,16 @@
-module.exports = 
+module.exports =
     run: ->
-        bt = require 'bootstrapper'
+        qm = require 'queue-manager'
         {dispatch_impl} = require 'libprotocol'
         {info} = dispatch_impl 'ILogger', 'App'
+        idom = dispatch_impl 'IDom'
 
-        bt.put_to_queue('init_queue', [
+        qm.put_to_queue('init_queue', [
             -> info "**Starting init queue"
             -> info "**init queue done"
         ])
 
-        bt.put_to_queue('document_ready_queue', [
+        qm.put_to_queue('document_ready_queue', [
             -> info "**Starting doc rdy queue"
             ->
                 dna = require 'dna-lang'
@@ -17,4 +18,5 @@ module.exports =
             -> info "**doc rdy queue done"
         ])
 
-        bt.run_init_queue()
+        qm.run_queue 'init_queue'
+        idom.on_dom_ready -> qm.run_queue 'document_ready_queue'

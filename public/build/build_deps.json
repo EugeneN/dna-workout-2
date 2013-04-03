@@ -3,11 +3,21 @@
         "name": "bundle1",
         "modules": [
             {
+                "name": "queue-manager",
+                "path": "queue-manager.coffee",
+                "type": "commonjs",
+                "location": "fs",
+                "deps": [],
+                "prefix_meta": {}
+            },
+            {
                 "name": "config",
                 "path": "config.coffee",
                 "type": "commonjs",
                 "location": "fs",
-                "deps": [],
+                "deps": [
+                    "queue-manager"
+                ],
                 "prefix_meta": {}
             },
             {
